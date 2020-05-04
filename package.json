@@ -1,0 +1,30 @@
+{
+  "name": "stars_background",
+  "version": "1.0.0",
+  "description": "A threejs project",
+  "main": "index.js",
+  "author": "teemwu",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --colors",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.4",
+    "@types/webpack": "^4.41.12",
+    "@types/webpack-dev-server": "^3.10.1",
+    "cross-env": "^7.0.2",
+    "html-webpack-plugin": "^4.3.0",
+    "ts-loader": "^7.0.2",
+    "ts-node": "^8.10.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cdn-plugin": "^3.3.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "three": "^0.116.1"
+  }
+}
