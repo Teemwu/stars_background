@@ -1,17 +1,16 @@
-import * as path from 'path'
-import * as  webpack from 'webpack'
-import * as HtmlWebpackPlugin from 'html-webpack-plugin'
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV === 'production'
 const BASE_URL = isProduction ? '/dist/' : '/'
 
-const config: webpack.Configuration = {
-    mode: process.env.NODE_ENV as any,
+module.exports = {
+    mode: process.env.NODE_ENV,
     entry: './src/index.ts',
     module: {
         rules: [
             {
-                test: /\.tsx?&/,
+                test: /\.ts?&/,
                 use: 'ts-loader',
                 exclude: /node_modules/
             }
@@ -28,7 +27,7 @@ const config: webpack.Configuration = {
         })
     ],
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.js']
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'src'),
@@ -47,5 +46,3 @@ const config: webpack.Configuration = {
         path: path.resolve(__dirname, 'dist')
     }
 }
-
-export default config
